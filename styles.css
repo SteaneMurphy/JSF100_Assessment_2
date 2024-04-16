@@ -1,0 +1,460 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+a
+{
+    text-decoration: none;
+}
+
+header
+{
+    background: #f7f7f7;
+    width: 100%;
+    height: auto;
+}
+
+#headerOne
+{
+    display: flex;
+    justify-content: flex-end;
+    background: #f7f7f7;
+    width: 100%;
+    height: 5vh;
+    padding: 0 2em;
+}
+
+#headerOne div
+{
+    display: flex;
+    align-items: center;
+}
+
+#headerOne a, #headerOne p
+{
+    text-decoration: none;
+    font-size: 0.8em;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    color:#111111
+}
+
+#headerOne p
+{
+    padding: 0 1em;
+}
+
+#headerTwo
+{
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 7vh;
+    padding: 0 2em;
+}
+
+#links
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding-right: 18%;
+}
+
+#links a
+{
+    font-family: Helvetica, sans-serif;
+    color: black;
+    font-size: 0.9em;
+    margin: 0 0.5em;
+}
+
+#search
+{
+    background: white;
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+
+#search input
+{
+    width: 50%;
+    border-radius: 30px;
+    border: none;
+    height: 4.5vh;
+    background: #f7f7f7;
+    color:#757577a4;
+}
+
+#logo img
+{
+    width: 100%;
+}
+
+#headerThree
+{
+    display: flex;
+    justify-content: center;
+    background: #f7f7f7;
+    width: 100%;
+    height: 9vh;
+    padding: 0 2em;
+}
+
+#headerThree div
+{
+    display: flex;
+    align-items: center;
+    font-family: Helvetica, sans-serif;
+}
+
+nav
+{
+    display: flex;
+    align-items: center;
+    background: white;
+    width: 100%;
+    height: 10vh;
+    padding: 0 2em;
+}
+
+#categoryHeader
+{
+    color: #ba2b2b;
+}
+
+nav p
+{
+    font-family: Helvetica, sans-serif;
+    font-size: 1.3em;
+}
+
+main
+{
+    background: blue;
+    width: 100%;
+    height: auto;
+    min-height: 110vh;
+    display: flex;
+}
+
+main aside
+{
+    background: white;
+    width: 20%;
+    height: auto;
+    min-height: 110vh;
+    padding: 0 2em;
+}
+
+#categoryAside
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#filterAside
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+
+#filterAside a
+{
+    border-top: 1px solid #dcdcdc;
+    padding: 2vh 0;
+}
+
+aside a
+{
+    text-decoration: none;
+    color: black;
+    font-family: Helvetica, sans-serif;
+    width: 100%;
+    padding: 0.3em 0;
+    
+}
+
+main section
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: white;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 0 2em;
+}
+
+.productContainer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: #f7f7f7;
+    width: 33%;
+    height: auto;
+    margin-bottom: 5vh;
+    font-family: Helvetica, sans-serif;
+    color: #757577;
+}
+
+.productDetails
+{
+    background: white;
+    width: 100%;
+}
+
+#productName, #productPrice
+{
+    color: #ba2b2b;
+    padding-top: 1em;
+    font-weight: bold;
+}
+
+#productPrice
+{
+    color: black;
+}
+
+.productDetails p:nth-of-type(2)
+{
+    padding: 0.3em 0;
+}
+
+footer
+{
+    background: #111111;
+    width: 100%;
+    height: 50vh;
+    font-family: Helvetica, sans-serif;
+}
+
+footer a
+{
+    text-decoration: none;
+    font-size: 0.8em;
+    color: #696969;
+    padding-left: 1em;
+}
+
+#footerMain
+{
+    background: red;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40vh;
+}
+
+#FMone
+{
+    background: #111111;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 33%;
+    height: auto;
+}
+
+#FMone div
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#FMone a
+{
+    color: white;
+    font-weight: bold;
+    font-size: 0.8em;
+    padding: 0.4em 0;
+}
+
+#FMone a:nth-of-type(1)
+{
+    padding-top: 3em;
+}
+
+#FMtwo
+{
+    background: #111111;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 33%;
+    height: auto;
+    align-items: center;
+}
+
+#FMtwo div
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#FMtwo a:nth-of-type(1)
+{
+    padding-top: 3em;
+}
+
+#FMtwo a:not(:first-child)
+{
+    font-size: 0.75em;
+    color: #696969;
+}
+
+#FMtwo a:not(:first-child):hover
+{
+    font-size: 0.75em;
+    color: white;
+}
+
+#FMtwo a
+{
+    color: white;
+    font-weight: bold;
+    font-size: 0.8em;
+    padding: 0.4em 0;
+}
+
+#FMthree
+{
+    background: #111111;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 33%;
+    height: auto;
+    align-items: center;
+}
+
+#FMthree a:nth-of-type(1)
+{
+    padding-top: 3em;
+}
+
+#FMthree a:not(:first-child)
+{
+    font-size: 0.75em;
+    color: #696969;
+}
+
+#FMthree a:not(:first-child):hover
+{
+    font-size: 0.75em;
+    color: white;
+}
+
+#FMthree div
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#FMthree a
+{
+    color: white;
+    font-weight: bold;
+    font-size: 0.8em;
+    padding: 0.4em 0;
+}
+
+#FMfour
+{
+    background: #111111;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: auto;
+    padding-right: 2em;
+    padding-top: 2em;
+}
+
+#FMfour img:hover
+{
+    border-radius: 50%;
+    background: #ba2b2b;
+}
+
+#footerMid
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #111111;
+    width: 100%;
+    height: 5vh;
+    padding: 0 2em;
+}
+
+#footerMid a:hover
+{
+    color: white;
+}
+
+#footerBottom
+{
+    background: 111111;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 5vh;
+    padding: 0 2em;
+}
+
+#footerBottom a:hover
+{
+    color: white;
+}
+
+#footerBottom p
+{
+    font-size: 0.8em;
+}
+
+#footerBottom #leftSide
+{
+    display: flex;
+    align-items: center;
+}
+
+#footerBottom p
+{   
+    padding-left: 0.5em;
+    color: white;
+}
+
+#footerBottom img
+{
+    width: 5%;
+}
+
+#footerBottom p:nth-of-type(2)
+{
+    padding-left: 1em;
+    color: #696969;
+}
+
+#footerBottom #rightSide
+{
+    display: flex;
+    align-items: center;
+}
