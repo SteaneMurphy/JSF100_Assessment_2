@@ -10,6 +10,7 @@ body
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 a
 {
     text-decoration: none;
@@ -184,8 +185,7 @@ aside a
     color: black;
     font-family: Helvetica, sans-serif;
     width: 100%;
-    padding: 0.3em 0;
-    
+    padding: 0.3em 0;   
 }
 
 main section
