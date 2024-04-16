@@ -250,16 +250,8 @@ var filters =
             hex: "#60686c",
         }, 
         {
-            name: "yellow",
-            hex: "#826801",
-        },
-        {
             name: "white",
             hex: "#ffffff",
-        },
-        {
-            name: "purple",
-            hex: "#8d429f",
         },    
     ],
     height:
@@ -297,6 +289,19 @@ var filterState =
     },
 }
 
+var coloursSelected =
+{
+    red: false,
+    black: false,
+    blue: false,
+    brown: false,
+    green: false,
+    orange: false,
+    pink: false,
+    grey: false,
+    white: false,
+}
+
 /******************************************************************* 
 *                    PAGE INITIALISATION SECTION                   *
 ********************************************************************/
@@ -311,7 +316,7 @@ function InitialState()
                                                                     <img src="${sneakers[i].image}">
                                                                     <div class="productDetails">
                                                                         <p id="productName">${sneakers[i].name}</p>
-                                                                        <p class="catergoryDetails">${sneakers[i].category}</p>
+                                                                        <p class="catergoryDetails">${sneakers[i].gender}</p>
                                                                         <p class="catergoryDetails">${sneakers[i].colour.length} Colours</p>
                                                                         <p id="productPrice">$${sneakers[i].price.price}</p>
                                                                     </div>
@@ -401,8 +406,18 @@ function ExpandCategory(category)
             //adds a new <div>, sets its name and attributes for tracking and attatches a checkbox
             for(var i = 0; i < filterCount; i++)
             {
-                document.getElementById(category).outerHTML += `<div class="filter" id="${category}F"><input type="checkbox" class="checkbox" value="${filters[category][i].name}" onchange="UpdateFilters()">
-                                                                ${filters[category][i].name}</div>`;
+                document.getElementsByClassName("allColours")[0].innerHTML +=`<div class="colourContainer" id="colourF" onClick="UpdateColours('${filters.colour[i].name}', 'c${i}', '${i}')">
+                                                                                    <div class="colourDiv" id="c${i}"></div>
+                                                                                    <p>${filters.colour[i].name}</p>
+                                                                                </div>`;
+                if(coloursSelected[filters.colour[i].name])
+                {
+                    document.getElementById(`c${i}`).style.backgroundColor = '#c7c7c7';
+                }
+                else
+                {
+                    document.getElementById(`c${i}`).style.backgroundColor = filters.colour[i].hex;
+                }
                 /***console messaging***/
                 console.log(`FILTER: ${filters[category][i].name} is now visible to user`);
             }
@@ -416,7 +431,7 @@ function ExpandCategory(category)
         {
             for(var i = 0; i < filterCount; i++)
             {
-                document.getElementById(category).innerHTML += `<div class="filter" id="${category}F">
+                document.getElementById(category).outerHTML += `<div class="filter" id="${category}F">
                                                                     <input type="checkbox" class="checkbox" value="${filters[category][i]}" onchange="UpdateFilters()">
                                                                 ${filters[category][i]}
                                                                 </div>`;
@@ -480,6 +495,20 @@ function UpdateFilters()
     UpdateDisplay(filtersChosen);
     /***console messaging***/
     console.log(`FILTERS CHOSEN: ${filtersChosen}`);
+}
+
+function UpdateColours(colour, id, index)
+{
+    if(coloursSelected[colour] == false)
+    {
+        coloursSelected[colour] = true;
+        document.getElementById(id).style.backgroundColor = '#c7c7c7';
+    }
+    else
+    {
+        coloursSelected[colour] = false;
+        document.getElementById(id).style.backgroundColor = filters.colour[index].hex;
+    }
 }
 
 /*
@@ -572,9 +601,15 @@ function ArrangeProducts(displayArray)
     //this image and <div> is styled by the styles.css script
     for(var i = 0; i < displayArray.length; i++)
     {
-        document.querySelector(".mainContainer").innerHTML += `<div class="productContainer">
-                                                                    <img src=${displayArray[i].image}>
-                                                               </div>`;
+        document.querySelector(".mainContainer").innerHTML += ` <div class="productContainer">
+                                                                    <img src="${displayArray[i].image}">
+                                                                    <div class="productDetails">
+                                                                        <p id="productName">${displayArray[i].name}</p>
+                                                                        <p class="catergoryDetails">${displayArray[i].gender}</p>
+                                                                        <p class="catergoryDetails">${displayArray[i].colour.length} Colours</p>
+                                                                        <p id="productPrice">$${displayArray[i].price.price}</p>
+                                                                    </div>
+                                                                </div>`;
     }
 
     /***console messaging***/

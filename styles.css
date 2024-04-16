@@ -458,3 +458,49 @@ footer a
     display: flex;
     align-items: center;
 }
+
+.allColours
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.colourContainer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    margin-bottom: 2vh;
+}
+
+.colourContainer:hover
+{
+    p
+    {
+        color:#ba2b2b;
+    }
+    .colourDiv
+    {
+        border-color: #ba2b2b;
+    }
+}
+
+.colourDiv
+{
+    width: 50%;
+    height: 4vh;
+    border-radius: 50%;
+    border: 0.5mm solid #c7c7c7;
+}
+
+.allColours p
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7em;
+    padding-top: 0.5em;
+}
