@@ -23,19 +23,6 @@ In the event that this prototype does not work, information has been logged to t
 *                    OBJECTS AND ARRAYS SECTION                    *
 ********************************************************************/
 
-/*
-The 'sneakers' array is an object that holds information for each product displayed or sold on the webstore. Normally this data would be stored
-in the backend using a database. The 50 items are listed here for both simplicity and so that they can be easily referenced to when looking
-over the project. 
-
-Each entry to this array is a seperate object that contains specific information pertaining to that product alone. These information
-catagories are its product name, gender, product price and price category, shoe size availability, show colour availability, shoe height category and
-a link to its image (currently in the images folder)
-
-These catergories will be referenced in further code to filter the products, (IE; is the shoe red? if so, display this product on the page)
-*/
-/* 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 15, 16, 17, 18 */
-/*  purple,  white*/
 var sneakers = 
 [
     {
@@ -194,13 +181,86 @@ var sneakers =
         height: "low", 
         image: "images/products/nikeRevolution6.webp",  
     },
+    {
+        name: "Air Jordan 1 Elevate High",
+        gender: "Unisex",
+        price: 
+        {
+            price: 220,
+            category: "",
+        },
+        size: [3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 15, 16, 17, 18],
+        colour: ["black", "red", "yellow", "blue", "white"],
+        height: "high", 
+        image: "images/products/airJordan1ElevateHigh.webp",  
+    },
+    {
+        name: "Air Jordan 1 HiFly Ease",
+        gender: "Men",
+        price: 
+        {
+            price: 200,
+            category: "",
+        },
+        size: [3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 15, 16, 17, 18],
+        colour: ["black", "red", "yellow", "white"],
+        height: "high", 
+        image: "images/products/airJordan1HiFlyEase.webp",  
+    },
+    {
+        name: "Air Jordan 1 Low",
+        gender: "Men",
+        price: 
+        {
+            price: 160,
+            category: "",
+        },
+        size: [3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 15, 16, 17, 18],
+        colour: ["white", "black", "blue", "yellow", "red"],
+        height: "low", 
+        image: "images/products/airJordan1Low.webp",  
+    },
+    {
+        name: "Air Jordan 1 Mid",
+        gender: "Men",
+        price: 
+        {
+            price: 180,
+            category: "",
+        },
+        size: [3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 15, 16, 17, 18],
+        colour: ["white", "black", "blue", "yellow", "grey"],
+        height: "mid", 
+        image: "images/products/airJordan1Mid.webp",  
+    },
+    {
+        name: "Air Jordan 1 Mid SE",
+        gender: "Unisex",
+        price: 
+        {
+            price: 190,
+            category: "",
+        },
+        size: [3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 15, 16, 17, 18],
+        colour: ["white", "black", "blue", "yellow", "grey"],
+        height: "mid", 
+        image: "images/products/airJordan1MidSE.webp",  
+    },
+    {
+        name: "Air Jordan 1 Zoom CMFT 2",
+        gender: "Unisex",
+        price: 
+        {
+            price: 210,
+            category: "",
+        },
+        size: [3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 15, 16, 17, 18],
+        colour: ["yellow", "red"],
+        height: "high", 
+        image: "images/products/airJordan1ZoomCMFT2.webp",  
+    },
 ]
 
-/*
-The 'filters' object contains the exact information that is to be displayed under each category in the filter menu. When populating the filters,
-this object is referenced to set the string names of each filter. Please note that the "hex" value for the colour category is not yet implemented,
-just the colour name
-*/
 var filters = 
 {
     gender: 
@@ -260,11 +320,6 @@ var filters =
     ],
 };
 
-/*
-The 'filterState' object contains a boolean value for each category on the filter menu. This object tracks whether that particular category is currently
-expanded (displayed) or not. It is a static object that changes depending on user interaction. When a user has clicked on a catergory to expand it,
-the relevant boolean value is switched to true. The reverse is true when the user clicks to close the category
-*/
 var filterState = 
 {
     gender:
@@ -290,17 +345,19 @@ var filterState =
 }
 
 var coloursSelected =
-{
-    red: false,
-    black: false,
-    blue: false,
-    brown: false,
-    green: false,
-    orange: false,
-    pink: false,
-    grey: false,
-    white: false,
-}
+
+    {
+        "red": false,
+        "black": false,
+        "blue": false,
+        "brown": false,
+        "green": false,
+        "orange": false,
+        "pink": false,
+        "grey": false,
+        "white": false,
+    }
+
 
 /******************************************************************* 
 *                    PAGE INITIALISATION SECTION                   *
@@ -308,10 +365,10 @@ var coloursSelected =
 
 function InitialState()
 {
-    //for each product in sneakers
+    document.querySelector(".mainContainer").innerHTML = "";
+
     for(var i = 0; i < sneakers.length; i++)
     {
-        //access the DOM, using querySelector, find an element with the class 'mainContainer'. Access the HTML inside this element and add the following:
         document.querySelector(".mainContainer").innerHTML += ` <div class="productContainer">
                                                                     <img src="${sneakers[i].image}">
                                                                     <div class="productDetails">
@@ -324,18 +381,6 @@ function InitialState()
     }
 }
 
-/*
-This function is also called when the page is first loaded. Its purpose is to set the price category (IE; "Over $200") to each product in the 'sneakers'
-object. Whilst it is trivial to manually set these variables myself, if a webstore is to host thousands of products, an automatic way needs to be used.
-This also allows for a store employee to change the price in one spot, and the price category will update automatically to reflect that change.
-
-The price category is used in later functions to test the filters against the products.
-
-The function first loops through every product in the 'sneakers' object. It then applies a condition to test what price bracket the product has been set to.
-When it finds the correct condition that returns true, it sets the corresponding price catergory to the relevant string.
-
-IE; "Is the sneaker's price over $200? If so, set the price.catergory string to 'Over $200' "
-*/
 function InitialisePriceCategory()
 {
     for(var i = 0; i < sneakers.length; i++)
@@ -358,11 +403,7 @@ function InitialisePriceCategory()
         }
     }
 }
-/*
-The 'document.onload' variable checks for the page load status from the browser. When it finds that the page is loading, it runs whatever has been
-assigned to it, in this case to run a function. I have used the 'document.onload' variable to run the two initialisation functions as soon as the
-page loads. They are described in detail above.
-*/
+
 document.onload = InitialState();
 document.onload = InitialisePriceCategory();
 
@@ -370,40 +411,14 @@ document.onload = InitialisePriceCategory();
 *                 WEB COMPONENT LOGIC SECTION                      *
 ********************************************************************/
 
-/*
-This function expands and collapses the category the user has clicked on in the filter menu.
-
-Each category has been assigned a relevant 'onClick' value, in this case to call this particular function when clicked. A parameter is also passed along
-with that click, referencing exactly which category the user has clicked on. For example, a user clicks on the 'Gender' category on the filter menu,
-this function is called and the value 'gender' is passed into this function as the variable 'onClick' below.
-
-The 'onClick' variable is used to search the DOM for an ID of the same name. This ID will point to a relevant <div> in the DOM. Once the <div> has been
-found, the filters are added to the page HTML.
-
-A distinction is made between 'colour' and every other filter category, as the colour category has multiple values. We are only concerned with the 
-'colour.name' at this point. A seperate condition had to be made for this category for this reason.
-
-For each filter under their relevant category, the for loop will add the new HTML to the document, resulting in a list below the clicked category. Each
-filter has a checkbox attatched to it.
-
-When a filter category is expanded, the filterState object is updated to either true or false to indicate its status. When false, instead of injecting
-HTML into the DOM, it instead removes HTML under the assocatied filter catergory, resulting in the menu collapsing.
-*/
-
 function ExpandCategory(category)
 {
-    //how many filters are in this category?
     filterCount = filters[category].length;
-    //if the filter category has not already been expanded, start expanding the menu
+
     if(filterState[category].filterOn == false)
     {
-        //if the category clicked is 'Colours'
         if(category == "colour")
         {
-            //for each colour in the colour category, create a new HTML element 'filter' and display under the relevant category <div>
-            //document.getElementById searches the DOM for any element with the associated ID. In this case 'color'
-            //'.outerHTML' accesses the HTML outside the parent <div>
-            //adds a new <div>, sets its name and attributes for tracking and attatches a checkbox
             for(var i = 0; i < filterCount; i++)
             {
                 document.getElementsByClassName("allColours")[0].innerHTML +=`<div class="colourContainer" id="colourF" onClick="UpdateColours('${filters.colour[i].name}', 'c${i}', '${i}')">
@@ -422,68 +437,42 @@ function ExpandCategory(category)
                 console.log(`FILTER: ${filters[category][i].name} is now visible to user`);
             }
         }
-        //if any other category has been clicked
-        //for each filter in the associated category, create a new HTML element 'filter' and display under the relevant category <div>
-        //document.getElementById searches the DOM for any element with the associated ID. In this case 'color'
-        //'.outerHTML' accesses the HTML outside the parent <div>
-        //adds a new <div>, sets its name and attributes for tracking and attatches a checkbox
         else
         {
             for(var i = 0; i < filterCount; i++)
             {
                 document.getElementById(category).outerHTML += `<div class="filter" id="${category}F">
                                                                     <input type="checkbox" class="checkbox" value="${filters[category][i]}" onchange="UpdateFilters()">
-                                                                ${filters[category][i]}
+                                                                <span>${filters[category][i]}</span>
                                                                 </div>`;
                 /***console messaging***/
                 console.log(`FILTER: ${filters[category][i]} is now visible to user`);
             }
         }
-        //adjust filter state to ON
+
         filterState[category].filterOn = true;
         /***console messaging***/
         console.log(`CATEGORY: ${category} is now expanded`);
     }
     else
     {
-        //if the filter category has already been expanded, then collapse the category
-        //find each filter by their ID using 'document.getElementById' and use the remove() function, deleting this line of HTML from the DOM
         for(var i = 0; i < filterCount; i++)
         {
             document.getElementById(`${category}F`).remove();
             /***console messaging***/
             console.log(`FILTER: All filters with CATEGORY: ${category} have been removed`);
         }
-        //adjust filter state to OFF
+
         filterState[category].filterOn = false;
         /***console messaging***/
         console.log(`CATEGORY: ${category} is now collapsed`);
     }  
 }
 
-/*
-This function runs whenever a user clicks a checkbox next to filter in the menu. Its purpose is to record which filters have been turned on or off 
-by the user.
-
-Each textbox has an 'onchange' attribute. This attribute detects when a user has clicked or changed the associated element. In this case the 'onchange'
-event calls this function.
-
-The function uses the document.querySelectorAll method to create an array of all the checkboxes with the class name of 'checkbox'. The array is then
-looped through and each checkbox is checked to see whether or not it has been checked active by the user. This is done by using the comparison, '.checked'
-in the IF statement below.
-
-If a check is found, the value attribute attatched to the checkbox is added to a new array (filtersChosen). The end result is an array that only 
-contains filters that the user has clicked on and activated.
-
-The end of this function calls another function and passes the new array information to said function.
-*/
-function UpdateFilters()
+function UpdateFilters(coloursActive=false)
 {
-    //creates a new array and adds all checkboxes to each element of the array, querySelectorAll finds all instances of the class in the DOM
     var checkBoxes = document.querySelectorAll(".checkbox");
-    //create a new empty array
     var filtersChosen = new Array();
-    //for every checkbox, check if user clicked it active, if so, add a reference to the 'value' attribute to the new 'filtersChosen' array
     for(var i = 0; i < checkBoxes.length; i++)
     {
         if(checkBoxes[i].checked)
@@ -491,8 +480,8 @@ function UpdateFilters()
             filtersChosen.push(checkBoxes[i].getAttribute("value"));
         }
     }
-    //send the filtersChosen array to the next function for processing
-    UpdateDisplay(filtersChosen);
+
+    UpdateDisplay(filtersChosen, coloursActive);
     /***console messaging***/
     console.log(`FILTERS CHOSEN: ${filtersChosen}`);
 }
@@ -509,28 +498,36 @@ function UpdateColours(colour, id, index)
         coloursSelected[colour] = false;
         document.getElementById(id).style.backgroundColor = filters.colour[index].hex;
     }
+
+    var coloursActive = CheckActive();
+    console.log(coloursActive);
+    UpdateFilters(coloursActive);
 }
 
-/*
-This function is called by the previous function "UpdateFilters()". The purpose of this function is to update what products are displayed on the main
-page.
-
-The array 'filtersChosen' contains a list of filters that the user has clicked on. These filters are then compared against each product in the object
-'sneakers'. If a match is found a copy of the object data for that product is added to a new array (displayArray).
-
-Once all the matches have been found, the new array (displayArray) is sent to the final function for processing. This array contains all the products
-that match the filters and categories the user has chosen, and ommitted the products that do not match.
-*/
-function UpdateDisplay(filtersChosen)
+function CheckActive()
 {
-    //create new array to hold product matches
+    
+    for(var i = 0; i < Object.keys(coloursSelected).length; i++)
+    {
+        if(Object.values(coloursSelected)[i] == true)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+function UpdateDisplay(filtersChosen, coloursActive=false)
+{
+    if(filtersChosen.length == 0 && coloursActive == false)
+    {
+        InitialState();
+        return;
+    }
     var displayArray = new Array();
 
-    //for each product in 'sneakers'
     for(var i = 0; i < sneakers.length; i++)
     {
-        //check each filter in 'filtersChosen' against each element in 'sneakers'
-        //each category has its own specialised check
         for(var j = 0; j < filtersChosen.length; j++)
         {
             //gender
@@ -556,21 +553,27 @@ function UpdateDisplay(filtersChosen)
                     break;
                 }                    
             }
-            //colours
-            for(var k = 0; k < sneakers[i].colour.length; k++)
-            {
-                //products can have multiple values for colour, so checks against each one
-                if(filtersChosen[j] == sneakers[i].colour[k])
-                {
-                    displayArray.push(sneakers[i]);
-                    break;
-                } 
-            }
             //height
             if(filtersChosen[j] == sneakers[i].height)
             {
                 displayArray.push(sneakers[i]);
                 break;
+            }
+        }
+        //colours           
+        for(var k = 0; k < sneakers[i].colour.length; k++)
+        {
+            //products can have multiple values for colour, so checks against each one
+            for(var l = 0; l < Object.keys(coloursSelected).length; l++)
+            {
+                
+                if(Object.values(coloursSelected)[l] == true)
+                {
+                    if(Object.keys(coloursSelected)[l] == sneakers[i].colour[k])
+                    {
+                        displayArray.push(sneakers[i]);
+                    }                   
+                } 
             }
         }
     }
@@ -583,14 +586,6 @@ function UpdateDisplay(filtersChosen)
     }
 }
 
-/*
-This final function displays each product in the 'displayArray' array. It works in a similar fashion to the 'InitialiseState()' function.
-
-The function clears the products on the page by finding the parent <div> that holds all the products, and nulls them. Once cleared, a for loop
-is used to inject new HTML into the same <div> for each product in the 'displayArray'.
-
-The function uses the 'document.querySelector' method to find the parent <div>, and paste the new product <div> code in the relevant spot.
-*/
 function ArrangeProducts(displayArray)
 {
     //find the 'mainContainer' <div> and its containing HTML, deletes all HTML in this section

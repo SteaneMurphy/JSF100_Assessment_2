@@ -1,7 +1,42 @@
-* {
+:root
+{
+    --t: 0.2rem;
+    --xxs: 0.4rem;
+    --xs: 0.8rem;
+    --s: 1.2rem;
+    --m: 1.4rem;
+    --d: 1.6rem;
+    --l: 2rem;
+    --xl: 2.4rem;
+    --xxl: 2.8rem;
+    --xxxl: 3.2rem;
+    --p40: 4rem;
+    --p80: 8rem;
+    --p120: 12rem;
+
+    /* colours */
+    --grey-medium: #dcdcdc;
+
+    /* fonts */
+    --league-gothic: Helvetica, sans-serif;
+}
+
+*
+{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+a, p, h1, h2, h3, h4, span
+{
+    font-family: var(--league-gothic);
+    text-decoration: none;
+}
+
+html
+{
+    font-size: 62.5%;
 }
 
 body
@@ -9,11 +44,6 @@ body
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
-
-a
-{
-    text-decoration: none;
 }
 
 header
@@ -30,7 +60,8 @@ header
     background: #f7f7f7;
     width: 100%;
     height: 5vh;
-    padding: 0 2em;
+    padding: 0 2rem;
+    font-size: var(--s);
 }
 
 #headerOne div
@@ -42,10 +73,9 @@ header
 #headerOne a, #headerOne p
 {
     text-decoration: none;
-    font-size: 0.8em;
-    font-family: Helvetica, sans-serif;
     font-weight: bold;
     color:#111111
+    
 }
 
 #headerOne p
@@ -61,7 +91,21 @@ header
     justify-content: space-between;
     width: 100%;
     height: 7vh;
-    padding: 0 2em;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    font-size: var(--d);
+}
+
+.headerTwoIcon
+{
+    width: 60%;
+}
+
+#search
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #links
@@ -70,14 +114,12 @@ header
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    padding-right: 18%;
+    padding-right: 16%;
 }
 
 #links a
 {
-    font-family: Helvetica, sans-serif;
     color: black;
-    font-size: 0.9em;
     margin: 0 0.5em;
 }
 
@@ -111,35 +153,31 @@ header
     background: #f7f7f7;
     width: 100%;
     height: 9vh;
-    padding: 0 2em;
+    padding: 0 2rem;
+    font-size: var(--d);
 }
 
 #headerThree div
 {
     display: flex;
     align-items: center;
-    font-family: Helvetica, sans-serif;
 }
 
 nav
 {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     background: white;
     width: 100%;
     height: 10vh;
-    padding: 0 2em;
+    padding: 0 2rem;
+    font-size: var(--xl);
 }
 
 #categoryHeader
 {
     color: #ba2b2b;
-}
-
-nav p
-{
-    font-family: Helvetica, sans-serif;
-    font-size: 1.3em;
 }
 
 main
@@ -157,7 +195,8 @@ main aside
     width: 20%;
     height: auto;
     min-height: 110vh;
-    padding: 0 2em;
+    padding: 0 2rem;
+    font-size: var(--d);
 }
 
 #categoryAside
@@ -176,14 +215,14 @@ main aside
 #filterAside a
 {
     border-top: 1px solid #dcdcdc;
-    padding: 2vh 0;
+    padding: var(--xs) 0;
+    margin-top: var(--d);
 }
 
 aside a
 {
     text-decoration: none;
     color: black;
-    font-family: Helvetica, sans-serif;
     width: 100%;
     padding: 0.3em 0;   
 }
@@ -206,17 +245,19 @@ main section
 {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     background: #f7f7f7;
     width: 33%;
     height: auto;
     margin-bottom: 5vh;
-    font-family: Helvetica, sans-serif;
     color: #757577;
 }
 
 .productDetails
 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     background: white;
     width: 100%;
 }
@@ -243,13 +284,11 @@ footer
     background: #111111;
     width: 100%;
     height: 50vh;
-    font-family: Helvetica, sans-serif;
 }
 
 footer a
 {
     text-decoration: none;
-    font-size: 0.8em;
     color: #696969;
     padding-left: 1em;
 }
@@ -284,7 +323,6 @@ footer a
 {
     color: white;
     font-weight: bold;
-    font-size: 0.8em;
     padding: 0.4em 0;
 }
 
@@ -317,13 +355,11 @@ footer a
 
 #FMtwo a:not(:first-child)
 {
-    font-size: 0.75em;
     color: #696969;
 }
 
 #FMtwo a:not(:first-child):hover
 {
-    font-size: 0.75em;
     color: white;
 }
 
@@ -331,7 +367,6 @@ footer a
 {
     color: white;
     font-weight: bold;
-    font-size: 0.8em;
     padding: 0.4em 0;
 }
 
@@ -353,13 +388,11 @@ footer a
 
 #FMthree a:not(:first-child)
 {
-    font-size: 0.75em;
     color: #696969;
 }
 
 #FMthree a:not(:first-child):hover
 {
-    font-size: 0.75em;
     color: white;
 }
 
@@ -373,7 +406,6 @@ footer a
 {
     color: white;
     font-weight: bold;
-    font-size: 0.8em;
     padding: 0.4em 0;
 }
 
@@ -427,7 +459,7 @@ footer a
 
 #footerBottom p
 {
-    font-size: 0.8em;
+
 }
 
 #footerBottom #leftSide
@@ -500,7 +532,5 @@ footer a
 
 .allColours p
 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.7em;
     padding-top: 0.5em;
 }
